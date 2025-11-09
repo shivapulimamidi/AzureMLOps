@@ -1,0 +1,4 @@
+uptime_days =$(awk '{print int($1/86400)}'/proc/uptime)
+   if ["$uptime_days" -gt 10] ;then
+echo "alert: uptime exceeds 10days" | mail -s "uptime alert" shiva21@gmail.com
+fi
